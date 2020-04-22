@@ -30,7 +30,7 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function (error) {
-  $('#message').text('Sign in failed!')
+  $('#message').text('Failed to sign in!')
   $('#message').removeClass()
   $('#message').addClass('failure')
   $('form').trigger('reset')
@@ -46,11 +46,30 @@ const changePasswordSuccess = function (data) {
 }
 
 const changePasswordFailure = function (error) {
-  $('#message').text('Change password failed!')
+  $('#message').text('Failed to change password!')
   $('#message').removeClass()
   $('#message').addClass('failure')
   $('form').trigger('reset')
   console.log('changePasswordFailure ran. Error is:', data)
+}
+
+const signOutSuccess = function (data) {
+  $('#message').text('Signed out successfully!')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+  $('form').trigger('reset')
+  console.log('signOutSuccess ran. Data is:', data)
+  $('#authenticated').hide()
+  $('#unauthenticated').show()
+  store.user = null
+}
+
+const signOutFailure = function (error) {
+  $('#message').text('Failed to sign out!')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+  $('form').trigger('reset')
+  console.log('signOutFailure ran. Error is:', data)
 }
 
 module.exports = {
@@ -59,5 +78,7 @@ module.exports = {
   signInSuccess,
   signInFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  signOutSuccess,
+  signOutFailure
 }
