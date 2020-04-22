@@ -11,3 +11,12 @@
 #authenticated {
   display: none;
 }
+
+.box {
+  align-items: center;
+  background-color: gray;
+  border: 5px solid black;
+  display: flex;
+  height: 120px;
+  justify-content: center;
+}
