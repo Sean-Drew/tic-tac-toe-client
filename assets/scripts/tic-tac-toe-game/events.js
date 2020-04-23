@@ -29,18 +29,26 @@ const onTokenAdd = function (event) {
 
 const checkForWin = function () {
   if (gameBoard[0] === currentPlayerToken && gameBoard[1] === currentPlayerToken && gameBoard[2] === currentPlayerToken) {
-    console.log('GAME OVER')
-  }
+    console.log(`Game Over, ${currentPlayerToken} wins!`)
+  } else if (gameBoard[0] === currentPlayerToken && gameBoard[3] === currentPlayerToken && gameBoard[6] === currentPlayerToken) {
+    console.log(`Game Over, ${currentPlayerToken} wins!`)
+  } if (gameBoard[0] === currentPlayerToken && gameBoard[4] === currentPlayerToken && gameBoard[8] === currentPlayerToken) {
+    console.log(`Game Over, ${currentPlayerToken} wins!`)
+  } if (gameBoard[1] === currentPlayerToken && gameBoard[4] === currentPlayerToken && gameBoard[7] === currentPlayerToken) {
+    console.log(`Game Over, ${currentPlayerToken} wins!`)
+  } if (gameBoard[2] === currentPlayerToken && gameBoard[4] === currentPlayerToken && gameBoard[6] === currentPlayerToken) {
+    console.log(`Game Over, ${currentPlayerToken} wins!`)
+  } if (gameBoard[2] === currentPlayerToken && gameBoard[5] === currentPlayerToken && gameBoard[8] === currentPlayerToken) {
+    console.log(`Game Over, ${currentPlayerToken} wins!`)
+  } if (gameBoard[3] === currentPlayerToken && gameBoard[4] === currentPlayerToken && gameBoard[5] === currentPlayerToken) {
+    console.log(`Game Over, ${currentPlayerToken} wins!`)
+  } else if (gameBoard[6] === currentPlayerToken && gameBoard[7] === currentPlayerToken && gameBoard[8] === currentPlayerToken) {
+    console.log(`Game Over, ${currentPlayerToken} wins!`)
+  } else console.log('TIE')
+  // need any more here? tie condition? anything else?
 }
 
-// identify win conditions (written down on paper right now).
-// check game board after every move. iterate through the game board? No, probably just need to call on specific combinations that equal a win condition?
-// if a win condition is met, end game. If not, continue game.
-// if (win condition === true) {
-//   end game
-// } else {
-//   continue game
-// }
+
 
 // end game, reset board
 // check if array is full, and no win condition is met. board full func?
