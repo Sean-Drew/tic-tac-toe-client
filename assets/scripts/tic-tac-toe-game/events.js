@@ -26,37 +26,11 @@ const onTokenAdd = function (event) {
   }
 }
 
-// const winnerX = function () {
-//   $('#message').value('Player X wins!')
-// }
-//
-// const winnerO = function () {
-//   $('#message').value('Player O wins!')
-// }
-//
-// const winCondition = function () {
-//   if (gameBoard.arr[0] === 'x' && gameBoard.arr[1] === 'x' && gameBoard.arr[2] === 'x') {
-//     console.log(winnerX())
-//
-//   }
-// }
-
-
-
-// while (winCondition = false) {
-//   return
-// }
-//
-// const winCondition = function () {
-//   while
-// }
-
-
-// if three in a row, game is won, game ends
-// identify possible win scenarios
-// check after every move if a win scenario exists
-// if win scenario = true, end game. if win scenario = false, continue game
-// while win scenario = false, continue game?
+// identify win conditions
+// check game board after every move.
+// if a win condition is met, end game. If not, continue game.
+// AKA ^^ if win condition = true, end game. If win condition = false, continue.
+// use a while loop in here somehow? While win condition = false, continue game?
 
 
 module.exports = {
