@@ -9,8 +9,11 @@
 const authEvents = require('./auth/events')
 
 $(() => {
+  // auth related events vv
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
+  // game related events vv
+  $('#game-board').on('click', authEvents.onTokenAdd)
 })
