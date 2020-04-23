@@ -7,6 +7,7 @@
 // require('./example')
 
 const authEvents = require('./auth/events')
+const gameEvents = require('./tic-tac-toe-game/events')
 
 $(() => {
   // auth related events vv
@@ -15,5 +16,5 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
   // game related events vv
-  $('#game-board').on('click', authEvents.onTokenAdd)
+  $('#game-board').on('click', gameEvents.onTokenAdd)
 })
