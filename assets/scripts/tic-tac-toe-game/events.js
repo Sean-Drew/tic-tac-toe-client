@@ -34,16 +34,18 @@ const onTokenAdd = function (event) {
         gameOver = true
         return
       }
-      if (currentPlayerToken === 'x') {
-        currentPlayerToken = 'o',
-        ui.changeTurnSuccess(currentPlayerToken)
-      } else {
-        currentPlayerToken = 'x',
-        ui.changeTurnSuccess(currentPlayerToken)
-      } console.log(gameBoard)
+      if (gameOver === false) {
+        if (currentPlayerToken === 'x') {
+          currentPlayerToken = 'o',
+          ui.changeTurnSuccess(currentPlayerToken)
+        } else {
+          currentPlayerToken = 'x',
+          ui.changeTurnSuccess(currentPlayerToken)
+        } console.log(gameBoard)
+      }
     }
   } else {
-    ui.changeTurnFailure()
+    ui.winnerNotice(currentPlayerToken)
     console.log('Game is over')
     return
     // specifically tell it to stop if the game IS over, don't presume the game will stop automatically. Even though it should, we want to make sure it does.
