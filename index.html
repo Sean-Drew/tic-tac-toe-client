@@ -22,28 +22,32 @@
           <input required type="text" placeholder="Enter Email" name="credentials[email]">
           <input required type="password" placeholder="Enter Password" name="credentials[password]">
           <input required type="password" placeholder="Confirm Password" name="credentials[password_confirmation]">
-          <button type="submit">Sign Up!</button>
+          <button type="submit" class="btn btn-outline-primary">Sign Up!</button>
         </form>
 
         <form id="sign-in">
           <input required type="text" placeholder="Enter Email" name="credentials[email]">
           <input required type="password" placeholder="Enter Password" name="credentials[password]">
-          <button type="submit">Sign In!</button>
+          <button type="submit" class="btn btn-outline-primary">Sign In!</button>
         </form>
     </div>
-
 
 
     <div id="authenticated">
       <form id="change-password">
         <input required type="password" name="passwords[old]" placeholder="Old Password">
         <input required type="password" name="passwords[new]" placeholder="New Password">
-        <button type="submit">Change Password!</button>
+        <button type="submit" class="btn btn-outline-primary">Change Password!</button>
       </form>
 
       <form id="sign-out">
-        <button type="submit">Sign Out</button>
+        <button type="submit" class="btn btn-outline-primary">Sign Out</button>
       </form>
+
+      <form id="game-index">
+        <button type="submit" class="btn btn-outline-primary">Index (Show All Games)</button>
+      </form>
+      <div id="game-display"></div>
 
       <div class="container">
         <button id="new-game "type="button" class="btn btn-outline-primary">New Game</button>

@@ -37,9 +37,37 @@ const invalidMove = function () {
   console.log('Invalid Move - ui')
 }
 
+const gameIndexSuccess = function (data) {
+  $('#message').text('Showed game list successfully!')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+  console.log(`gameIndexSuccess ran. Data is:`, data)
+
+  let gameList = ''
+
+  data.games.forEach(game => {
+    const gameHtml = (`
+        <h4>Title: ${movie.title}</h4>
+        <p>Director: ${movie.director}</p>
+        <p>ID: ${movie._id}</p>
+      `)
+    gameList += gameHtml
+  })
+  $('#game-display').html(gameList)
+}
+
+const gameIndexFailure = function (error) {
+  $('#message').text('Failed to show game list!')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+  console.log(`gameIndexFailure ran. Error is:`, error)
+}
+
 module.exports = {
   changeTurnSuccess,
   winnerNotice,
   gameTie,
-  invalidMove
+  invalidMove,
+  gameIndexSuccess,
+  gameIndexFailure
 }

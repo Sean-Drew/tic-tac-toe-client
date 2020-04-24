@@ -1,1 +1,6 @@
-index / show all games (delete this later)
+curl "https://tic-tac-toe-wdi.herokuapp.com/games" \
+  --include \
+  --request GET \
+  --header "Authorization: Token token=${TOKEN}" \
+
+echo

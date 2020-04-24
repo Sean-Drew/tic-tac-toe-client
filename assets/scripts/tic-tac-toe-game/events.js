@@ -83,19 +83,19 @@ const checkForWin = function () {
   } else if (gameBoard[0] === currentPlayerToken && gameBoard[3] === currentPlayerToken && gameBoard[6] === currentPlayerToken) {
     console.log(`Game Over, ${currentPlayerToken} wins!`)
     gameOver = true
-  } if (gameBoard[0] === currentPlayerToken && gameBoard[4] === currentPlayerToken && gameBoard[8] === currentPlayerToken) {
+  } else if (gameBoard[0] === currentPlayerToken && gameBoard[4] === currentPlayerToken && gameBoard[8] === currentPlayerToken) {
     console.log(`Game Over, ${currentPlayerToken} wins!`)
     gameOver = true
-  } if (gameBoard[1] === currentPlayerToken && gameBoard[4] === currentPlayerToken && gameBoard[7] === currentPlayerToken) {
+  } else if (gameBoard[1] === currentPlayerToken && gameBoard[4] === currentPlayerToken && gameBoard[7] === currentPlayerToken) {
     console.log(`Game Over, ${currentPlayerToken} wins!`)
     gameOver = true
-  } if (gameBoard[2] === currentPlayerToken && gameBoard[4] === currentPlayerToken && gameBoard[6] === currentPlayerToken) {
+  } else if (gameBoard[2] === currentPlayerToken && gameBoard[4] === currentPlayerToken && gameBoard[6] === currentPlayerToken) {
     console.log(`Game Over, ${currentPlayerToken} wins!`)
     gameOver = true
-  } if (gameBoard[2] === currentPlayerToken && gameBoard[5] === currentPlayerToken && gameBoard[8] === currentPlayerToken) {
+  } else if (gameBoard[2] === currentPlayerToken && gameBoard[5] === currentPlayerToken && gameBoard[8] === currentPlayerToken) {
     console.log(`Game Over, ${currentPlayerToken} wins!`)
     gameOver = true
-  } if (gameBoard[3] === currentPlayerToken && gameBoard[4] === currentPlayerToken && gameBoard[5] === currentPlayerToken) {
+  } else if (gameBoard[3] === currentPlayerToken && gameBoard[4] === currentPlayerToken && gameBoard[5] === currentPlayerToken) {
     console.log(`Game Over, ${currentPlayerToken} wins!`)
     gameOver = true
   } else if (gameBoard[6] === currentPlayerToken && gameBoard[7] === currentPlayerToken && gameBoard[8] === currentPlayerToken) {
@@ -104,9 +104,18 @@ const checkForWin = function () {
   }
 }
 
+const onIndexGame = function (event) {
+  event.preventDefault()
+  console.log(event)
+  api.indexGame()
+    .then(ui.gameIndexSuccess)
+    .catch(ui.gameIndexFailure)
+}
+
 module.exports = {
   onTokenAdd,
   isGameBoardFull,
   checkForWin,
-  currentPlayerToken
+  currentPlayerToken,
+  onIndexGame
 }
