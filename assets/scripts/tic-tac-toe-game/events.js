@@ -19,7 +19,8 @@ const onTokenAdd = function (event) {
     const target = event.target
     const targetId = target.id
     if ($(target).text() === 'x' || $(target).text() === 'o') {
-      console.log('bad move')
+      ui.invalidMove()
+      console.log('invalid move')
     } else {
       // this is html work vv
       $(target).text(currentPlayerToken)

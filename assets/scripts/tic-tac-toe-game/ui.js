@@ -30,8 +30,16 @@ const gameTie = function () {
   console.log('gameTie ran. Stalemate')
 }
 
+const invalidMove = function () {
+  $('#message').text(`Invalid move!`)
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+  console.log('Invalid Move - ui')
+}
+
 module.exports = {
   changeTurnSuccess,
   winnerNotice,
-  gameTie
+  gameTie,
+  invalidMove
 }
