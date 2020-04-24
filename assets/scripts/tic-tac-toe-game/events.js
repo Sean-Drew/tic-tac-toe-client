@@ -35,12 +35,15 @@ const onTokenAdd = function (event) {
         return
       }
       if (currentPlayerToken === 'x') {
-        currentPlayerToken = 'o'
+        currentPlayerToken = 'o',
+        ui.changeTurnSuccess(currentPlayerToken)
       } else {
-        currentPlayerToken = 'x'
+        currentPlayerToken = 'x',
+        ui.changeTurnSuccess(currentPlayerToken)
       } console.log(gameBoard)
     }
   } else {
+    ui.changeTurnFailure()
     console.log('Game is over')
     return
     // specifically tell it to stop if the game IS over, don't presume the game will stop automatically. Even though it should, we want to make sure it does.
@@ -99,5 +102,8 @@ const checkForWin = function () {
 }
 
 module.exports = {
-  onTokenAdd
+  onTokenAdd,
+  isGameBoardFull,
+  checkForWin,
+  currentPlayerToken
 }
