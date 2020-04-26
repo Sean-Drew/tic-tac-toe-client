@@ -1,14 +1,19 @@
 'use strict'
 
+// DON'T ASSUME CODE RESETS. IT WON'T UNLESS BROWSER IS ALSO RESET. BE EXPLICIT.
+
 const api = require('./api')
 const ui = require('./ui')
 
 let currentPlayerToken = "x"
 let gameBoard = ["","","","","","","","",""]
 let gameOver = false
-// ^^ using 'let' on the above 3 because the values may change over the course of the game.
+let currentGameId;
+let tieGame = false
+// ^^ using 'let' on the above because the values may change over the course of the game.
 
 const onTokenAdd = function (event) {
+  console.log('gameOver', gameOver)
   // function to add a game token with conditional statements about when and where tokens can be added.
   // tokens cannot be added to spaces already taken, tokens cannot be added after the game is over.
   // check to see if game is over before adding a new token.
@@ -33,9 +38,24 @@ const onTokenAdd = function (event) {
         // ^^ DON'T FORGET TO INVOKE FUNCTIONS! EVERY TIME YOU WANT TO USE IT! (blue = invoked)
         console.log('Game Over')
         gameOver = true
-        return
+        // Is this where I can add a UI feature to say game is over // tie?
+        tieGame = true
       }
-      if (gameOver === false) {
+      api.updateGameBoard({
+        id: currentGameId,
+        index: targetId,
+        gameToken: currentPlayerToken,
+        over: gameOver
+        // add notes here later
+      }).then((apiresponse) => console.log('Update was', apiresponse))
+      if (tieGame === true) {
+        ui.winnerNotice('Tie Game')
+      }
+      else if (gameOver === true) {
+        ui.winnerNotice(currentPlayerToken)
+        console.log('Game is over')
+      }
+      else if (gameOver === false) {
         if (currentPlayerToken === 'x') {
           currentPlayerToken = 'o',
           ui.changeTurnSuccess(currentPlayerToken)
@@ -46,8 +66,6 @@ const onTokenAdd = function (event) {
       }
     }
   } else {
-    ui.winnerNotice(currentPlayerToken)
-    console.log('Game is over')
     return
     // specifically tell it to stop if the game IS over, don't presume the game will stop automatically. Even though it should, we want to make sure it does.
   }
@@ -112,10 +130,31 @@ const onIndexGame = function (event) {
     .catch(ui.gameIndexFailure)
 }
 
+const onNewGame = function (event) {
+  event.preventDefault()
+  resetGame()
+  // console.log(event)
+  api.newGame()
+    .then((apiresponse) => {
+      // console.log(apiresponse)
+      currentGameId = apiresponse.game.id
+      console.log('new game current id', currentGameId)
+      ui.newGameSuccess()
+    })
+    .catch(ui.newGameFailure)
+}
+
+const resetGame = function () {
+  gameOver = false
+  gameBoard = ["","","","","","","","",""]
+  tieGame = false
+}
+
 module.exports = {
   onTokenAdd,
   isGameBoardFull,
   checkForWin,
   currentPlayerToken,
-  onIndexGame
+  onIndexGame,
+  onNewGame
 }

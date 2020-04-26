@@ -5,15 +5,15 @@ curl "https://tic-tac-toe-wdi.herokuapp.com/games" \
   --header "Content-Type: application/json" \
   --data '{
     "game": {
-      "id": "'"${ID}"'",
-      "cells": "'"${NEWPW}"'",
+      "id": "'"${GAMEID}"'",
+      "cells": ["","","","","","","","",""],
       "over": false,
       "player_x": {
-        "id": 1,
+        "id": "'"${PLAYERID}"'",
         "email": "'"${EMAIL}"'"
       },
       "player_o": null
     }
-  }'
+}'
 
 echo

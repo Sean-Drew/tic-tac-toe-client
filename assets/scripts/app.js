@@ -18,4 +18,5 @@ $(() => {
   // game related events vv
   $('#game-board').on('click', gameEvents.onTokenAdd)
   $('#game-index').on('submit', gameEvents.onIndexGame)
+  $('#game-new').on('submit', gameEvents.onNewGame)
 })

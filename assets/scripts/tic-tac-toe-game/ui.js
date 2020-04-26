@@ -43,17 +43,23 @@ const gameIndexSuccess = function (data) {
   $('#message').addClass('success')
   console.log(`gameIndexSuccess ran. Data is:`, data)
 
-  let gameList = ''
+  // create array of all games
+  const gamesArray = data.games
+  // filter games array for only completed games
+  const completedGames = gamesArray.filter((game) => game.over === true)
+  console.log(completedGames)
 
-  data.games.forEach(game => {
-    const gameHtml = (`
-        <h4>Title: ${movie.title}</h4>
-        <p>Director: ${movie.director}</p>
-        <p>ID: ${movie._id}</p>
-      `)
-    gameList += gameHtml
-  })
-  $('#game-display').html(gameList)
+  // let gameList = ''
+  //
+  // data.games.forEach(game => {
+  //   const gameHtml = (`
+  //   <div>ID: ${game.id}</div>
+  //   <div>${game.cells}</div>
+  //   `)
+  //   gameList += gameHtml
+  // })
+
+  $('#game-display').html(`You've completed ${completedGames.length} games.`)
 }
 
 const gameIndexFailure = function (error) {
@@ -63,11 +69,46 @@ const gameIndexFailure = function (error) {
   console.log(`gameIndexFailure ran. Error is:`, error)
 }
 
+const newGameSuccess = function (data) {
+  $('#message').text('Created new game successfully!')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+  console.log(`newGameSuccess ran. Data is:`, data)
+
+  const newBoard = (`
+  <div class="row game-board-top">
+    <div id="0" class="col-4 box"></div>
+    <div id="1" class="col-4 box"></div>
+    <div id="2" class="col-4 box"></div>
+  </div>
+  <div class="row game-board-middle">
+    <div id="3" class="col-4 box"></div>
+    <div id="4" class="col-4 box"></div>
+    <div id="5" class="col-4 box"></div>
+  </div>
+  <div class="row game-board-bottom">
+    <div id="6" class="col-4 box"></div>
+    <div id="7" class="col-4 box"></div>
+    <div id="8" class="col-4 box"></div>
+  </div>
+  `)
+  $('#game-board').html(newBoard)
+}
+
+const newGameFailure = function (error) {
+  $('#message').text('Failed to create new game!')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+  console.log(`newGameFailure ran. Error is:`, error)
+}
+
 module.exports = {
   changeTurnSuccess,
   winnerNotice,
   gameTie,
   invalidMove,
   gameIndexSuccess,
-  gameIndexFailure
+  gameIndexFailure,
+  newGameSuccess,
+  newGameFailure
 }
