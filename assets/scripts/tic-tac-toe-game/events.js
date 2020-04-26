@@ -13,19 +13,19 @@ let tieGame = false
 // ^^ using 'let' on the above because the values may change over the course of the game.
 
 const onTokenAdd = function (event) {
-  console.log('gameOver', gameOver)
+  // console.log('gameOver', gameOver)
   // function to add a game token with conditional statements about when and where tokens can be added.
   // tokens cannot be added to spaces already taken, tokens cannot be added after the game is over.
   // check to see if game is over before adding a new token.
   // check to see if game board is full but not won (tie) before adding a new token.
   if (gameOver === false) {
     // if the game is not over, run the following code
-    console.log(event.target.id)
+    // console.log(event.target.id)
     const target = event.target
     const targetId = target.id
     if ($(target).text() === 'x' || $(target).text() === 'o') {
       ui.invalidMove()
-      console.log('invalid move')
+      // console.log('invalid move')
     } else {
       // this is html work vv
       $(target).text(currentPlayerToken)
@@ -36,7 +36,7 @@ const onTokenAdd = function (event) {
       // ^^ DON'T FORGET TO INVOKE FUNCTIONS! EVERY TIME YOU WANT TO USE IT! (blue = invoked)
       if (isGameBoardFull()) {
         // ^^ DON'T FORGET TO INVOKE FUNCTIONS! EVERY TIME YOU WANT TO USE IT! (blue = invoked)
-        console.log('Game Over')
+        // console.log('Game Over')
         gameOver = true
         // Is this where I can add a UI feature to say game is over // tie?
         tieGame = true
@@ -53,7 +53,7 @@ const onTokenAdd = function (event) {
       }
       else if (gameOver === true) {
         ui.winnerNotice(currentPlayerToken)
-        console.log('Game is over')
+        // console.log('Game is over')
       }
       else if (gameOver === false) {
         if (currentPlayerToken === 'x') {
@@ -62,7 +62,7 @@ const onTokenAdd = function (event) {
         } else {
           currentPlayerToken = 'x',
           ui.changeTurnSuccess(currentPlayerToken)
-        } console.log(gameBoard)
+        // } console.log(gameBoard)
       }
     }
   } else {
@@ -76,7 +76,7 @@ const isGameBoardFull = function () {
   let fullBoard = false
   //added a counter here to keep track of whether each array value is !== "" (not equal to an empty string)
   let counter = 0
-  console.log('game board is ', gameBoard)
+  // console.log('game board is ', gameBoard)
   for (let i = 0; i < gameBoard.length; i++) {
     if (gameBoard[i] !== "") {
       counter += 1
@@ -86,8 +86,8 @@ const isGameBoardFull = function () {
     fullBoard = true
     //if the counter is 9+ then the game board is full. Don't need an else statement because the default state of fullBoard is defined above as false.
   }
-    console.log('counter is ', counter)
-    console.log('fullBoard is ', fullBoard)
+    // console.log('counter is ', counter)
+    // console.log('fullBoard is ', fullBoard)
     return fullBoard
     //will return fullBoard = true if all array values have anything inside them (for this, any game token). will return fullBoard = false if any of the array values are an empty string (no game token placed yet)
 }
@@ -96,35 +96,35 @@ const checkForWin = function () {
   // declare all the win conditions and check if any of them have been met.
   // if we use currentPlayerToken we don't have to specify each player for the win condition checks. This will also help provide more flexible code so if the game tokens change we don't have to modify the code as much later on, and can interpolate currentPlayerToken as well.
   if (gameBoard[0] === currentPlayerToken && gameBoard[1] === currentPlayerToken && gameBoard[2] === currentPlayerToken) {
-    console.log(`Game Over, ${currentPlayerToken} wins!`)
+    // console.log(`Game Over, ${currentPlayerToken} wins!`)
     gameOver = true
   } else if (gameBoard[0] === currentPlayerToken && gameBoard[3] === currentPlayerToken && gameBoard[6] === currentPlayerToken) {
-    console.log(`Game Over, ${currentPlayerToken} wins!`)
+    // console.log(`Game Over, ${currentPlayerToken} wins!`)
     gameOver = true
   } else if (gameBoard[0] === currentPlayerToken && gameBoard[4] === currentPlayerToken && gameBoard[8] === currentPlayerToken) {
-    console.log(`Game Over, ${currentPlayerToken} wins!`)
+    // console.log(`Game Over, ${currentPlayerToken} wins!`)
     gameOver = true
   } else if (gameBoard[1] === currentPlayerToken && gameBoard[4] === currentPlayerToken && gameBoard[7] === currentPlayerToken) {
-    console.log(`Game Over, ${currentPlayerToken} wins!`)
+    // console.log(`Game Over, ${currentPlayerToken} wins!`)
     gameOver = true
   } else if (gameBoard[2] === currentPlayerToken && gameBoard[4] === currentPlayerToken && gameBoard[6] === currentPlayerToken) {
-    console.log(`Game Over, ${currentPlayerToken} wins!`)
+    // console.log(`Game Over, ${currentPlayerToken} wins!`)
     gameOver = true
   } else if (gameBoard[2] === currentPlayerToken && gameBoard[5] === currentPlayerToken && gameBoard[8] === currentPlayerToken) {
-    console.log(`Game Over, ${currentPlayerToken} wins!`)
+    // console.log(`Game Over, ${currentPlayerToken} wins!`)
     gameOver = true
   } else if (gameBoard[3] === currentPlayerToken && gameBoard[4] === currentPlayerToken && gameBoard[5] === currentPlayerToken) {
-    console.log(`Game Over, ${currentPlayerToken} wins!`)
+    // console.log(`Game Over, ${currentPlayerToken} wins!`)
     gameOver = true
   } else if (gameBoard[6] === currentPlayerToken && gameBoard[7] === currentPlayerToken && gameBoard[8] === currentPlayerToken) {
-    console.log(`Game Over, ${currentPlayerToken} wins!`)
+    // console.log(`Game Over, ${currentPlayerToken} wins!`)
     gameOver = true
   }
 }
 
 const onIndexGame = function (event) {
   event.preventDefault()
-  console.log(event)
+  // console.log(event)
   api.indexGame()
     .then(ui.gameIndexSuccess)
     .catch(ui.gameIndexFailure)
@@ -138,7 +138,7 @@ const onNewGame = function (event) {
     .then((apiresponse) => {
       // console.log(apiresponse)
       currentGameId = apiresponse.game.id
-      console.log('new game current id', currentGameId)
+      // console.log('new game current id', currentGameId)
       ui.newGameSuccess()
     })
     .catch(ui.newGameFailure)

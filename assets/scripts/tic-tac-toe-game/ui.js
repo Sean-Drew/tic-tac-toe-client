@@ -11,7 +11,7 @@ const changeTurnSuccess = function (player) {
   // tell the player it's their turn
   $('#message').removeClass()
   $('#message').addClass('success')
-  console.log('changeTurnSuccess ran. Current player is', player)
+  // console.log('changeTurnSuccess ran. Current player is', player)
 }
 
 const winnerNotice = function (player) {
@@ -20,34 +20,34 @@ const winnerNotice = function (player) {
   $('#message').text(`Game Over, winner is ${player}`)
   $('#message').removeClass()
   $('#message').addClass('success')
-  console.log('winnerNotice ran. Winner is ', player)
+  // console.log('winnerNotice ran. Winner is ', player)
 }
 
 const gameTie = function () {
   $('#message').text(`Game Over, it's a tie!`)
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.log('gameTie ran. Stalemate')
+  // console.log('gameTie ran. Stalemate')
 }
 
 const invalidMove = function () {
   $('#message').text(`Invalid move!`)
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.log('Invalid Move - ui')
+  // console.log('Invalid Move - ui')
 }
 
 const gameIndexSuccess = function (data) {
   $('#message').text('Showed game list successfully!')
   $('#message').removeClass()
   $('#message').addClass('success')
-  console.log(`gameIndexSuccess ran. Data is:`, data)
+  // console.log(`gameIndexSuccess ran. Data is:`, data)
 
   // create array of all games
   const gamesArray = data.games
   // filter games array for only completed games
   const completedGames = gamesArray.filter((game) => game.over === true)
-  console.log(completedGames)
+  // console.log(completedGames)
 
   // let gameList = ''
   //
@@ -66,14 +66,14 @@ const gameIndexFailure = function (error) {
   $('#message').text('Failed to show game list!')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.log(`gameIndexFailure ran. Error is:`, error)
+  // console.log(`gameIndexFailure ran. Error is:`, error)
 }
 
 const newGameSuccess = function (data) {
   $('#message').text('Created new game successfully!')
   $('#message').removeClass()
   $('#message').addClass('success')
-  console.log(`newGameSuccess ran. Data is:`, data)
+  // console.log(`newGameSuccess ran. Data is:`, data)
 
   const newBoard = (`
   <div class="row game-board-top">
@@ -99,7 +99,7 @@ const newGameFailure = function (error) {
   $('#message').text('Failed to create new game!')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.log(`newGameFailure ran. Error is:`, error)
+  // console.log(`newGameFailure ran. Error is:`, error)
 }
 
 module.exports = {

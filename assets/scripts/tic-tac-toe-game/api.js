@@ -24,6 +24,7 @@ const newGame = function (data) {
   })
 }
 
+// docs give us what API is looking for
 // id: currentGameId,
 // index: targetId,
 // gameToken: currentPlayerToken,
