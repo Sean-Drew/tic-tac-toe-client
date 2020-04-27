@@ -65,9 +65,11 @@ const onTokenAdd = function (event) {
         // } console.log(gameBoard)
       }
     }
-  } else {
-    return
+      else {
+        return
     // specifically tell it to stop if the game IS over, don't presume the game will stop automatically. Even though it should, we want to make sure it does.
+      }
+    }
   }
 }
 
