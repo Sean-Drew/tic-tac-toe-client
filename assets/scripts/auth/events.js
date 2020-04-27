@@ -4,7 +4,6 @@ const getFormFields = require('../../../lib/get-form-fields')
 
 const api = require('./api')
 const ui = require('./ui')
-// const gameEvents = require('/Users/Daaaaaaaaan/sei/projects/tic-tac-toe-client/assets/scripts/tic-tac-toe-game/events.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -38,7 +37,9 @@ const onChangePassword = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  // gameEvents.resetGame()
+  $("#game-board").html("")
+  $("#game-display").html("")
+  // above 2 jquery inquiries will 'clear' these spaces (the game board and the game display which is the # games played message space) on a signout by setting the html content to an empty string.
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)

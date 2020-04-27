@@ -140,6 +140,7 @@ const onIndexGame = function (event) {
 const onNewGame = function (event) {
   event.preventDefault()
   resetGame()
+  $("#game-display").html("")
   // console.log(event)
   api.newGame()
     .then((apiresponse) => {
@@ -163,6 +164,5 @@ module.exports = {
   checkForWin,
   currentPlayerToken,
   onIndexGame,
-  onNewGame,
-  resetGame
+  onNewGame
 }
