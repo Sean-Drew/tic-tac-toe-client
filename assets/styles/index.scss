@@ -25,11 +25,13 @@ body {
 
 .input-field {
   border: 2px solid black;
+  border-radius: 5px;
 }
 
 .btn-primary {
   background-color: #3FB9B4;
   border: 2px solid black;
+  border-radius: 5px;
 }
 
 .success {
@@ -39,6 +41,7 @@ body {
   background-color: green;
   font-weight: bold;
   padding: 5px;
+  border-radius: 5px;
 }
 
 .failure {
@@ -48,6 +51,7 @@ body {
   background-color: red;
   font-weight: bold;
   padding: 5px;
+  border-radius: 5px;
 }
 
 #authenticated {
