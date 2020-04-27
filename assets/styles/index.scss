@@ -4,12 +4,27 @@ body {
   background: url(public/geometric-blue-seamless-pattern-background-simple-vector-22649200.jpg);
 }
 
+#name-header {
+  display: flex;
+  border: 4px solid #3FB9B4;
+  background-color: lightgray;
+  border-radius: 25px;
+  text-align: center;
+  padding: 15px;
+  margin: 12px;
+  font-size: 75px;
+  align-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-grow: 1;
+}
+
 .input-field {
   border: 2px solid black;
 }
 
 .btn-primary {
-  background-color: green;
+  background-color: #3FB9B4;
   border: 2px solid black;
 }
 
@@ -27,7 +42,7 @@ body {
 
 .box {
   align-items: center;
-  background-color: gray;
+  background-color: lightgray;
   border: 5px solid black;
   display: flex;
   height: 100px;
@@ -35,5 +50,5 @@ body {
 }
 
 .box:hover {
-  background-color: #F5F5F5;
+  background-color: #3FB9B4;
 }
