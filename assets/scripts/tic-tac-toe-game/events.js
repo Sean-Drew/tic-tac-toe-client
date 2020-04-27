@@ -10,7 +10,7 @@ let gameBoard = ["","","","","","","","",""]
 let gameOver = false
 let currentGameId;
 let tieGame = false
-// ^^ using 'let' on the above because the values may change over the course of the game.
+// ^^ using 'let' on the above few because the values may change over the course of the game.
 
 const onTokenAdd = function (event) {
   // console.log('gameOver', gameOver)
@@ -40,6 +40,7 @@ const onTokenAdd = function (event) {
         gameOver = true
         // Is this where I can add a UI feature to say game is over // tie?
         tieGame = true
+        // currentPlayerToken = 'x'
       }
       api.updateGameBoard({
         id: currentGameId,
@@ -49,7 +50,8 @@ const onTokenAdd = function (event) {
         // add notes here later
       }).then((apiresponse) => console.log('Update was', apiresponse))
       if (tieGame === true) {
-        ui.winnerNotice('Tie Game')
+        // ui.winnerNotice('Tie Game')
+        ui.gameTie()
       }
       else if (gameOver === true) {
         ui.winnerNotice(currentPlayerToken)
@@ -161,5 +163,6 @@ module.exports = {
   checkForWin,
   currentPlayerToken,
   onIndexGame,
-  onNewGame
+  onNewGame,
+  resetGame
 }

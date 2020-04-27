@@ -17,14 +17,14 @@ const changeTurnSuccess = function (player) {
 const winnerNotice = function (player) {
   // trying to have this apply only when game is over, it'll say Game Over.
   // added this to the else/return statement for when the game is over in events.js file.
-  $('#message').text(`Game Over, winner is ${player}`)
+  $('#message').text(`Game Over, winner is ${player}. Play again?`)
   $('#message').removeClass()
   $('#message').addClass('success')
   // console.log('winnerNotice ran. Winner is ', player)
 }
 
 const gameTie = function () {
-  $('#message').text(`Game Over, it's a tie!`)
+  $('#message').text(`Game Over, it's a tie! Play again?`)
   $('#message').removeClass()
   $('#message').addClass('failure')
   // console.log('gameTie ran. Stalemate')

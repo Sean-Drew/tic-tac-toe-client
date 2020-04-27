@@ -4,6 +4,7 @@ const getFormFields = require('../../../lib/get-form-fields')
 
 const api = require('./api')
 const ui = require('./ui')
+// const gameEvents = require('/Users/Daaaaaaaaan/sei/projects/tic-tac-toe-client/assets/scripts/tic-tac-toe-game/events.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -37,6 +38,7 @@ const onChangePassword = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
+  // gameEvents.resetGame()
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
