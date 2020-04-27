@@ -34,7 +34,7 @@ const onTokenAdd = function (event) {
       // change players after a move vv
       checkForWin()
       // ^^ DON'T FORGET TO INVOKE FUNCTIONS! EVERY TIME YOU WANT TO USE IT! (blue = invoked)
-      if (isGameBoardFull()) {
+      if (gameOver === false && isGameBoardFull()) {
         // ^^ DON'T FORGET TO INVOKE FUNCTIONS! EVERY TIME YOU WANT TO USE IT! (blue = invoked)
         // console.log('Game Over')
         gameOver = true
