@@ -53,6 +53,8 @@ const onTokenAdd = function (event) {
       }
       else if (gameOver === true) {
         ui.winnerNotice(currentPlayerToken)
+        currentPlayerToken = 'x'
+        // ^^ after game ends, set first player back to 'x'.
         // console.log('Game is over')
       }
       else if (gameOver === false) {
@@ -66,6 +68,7 @@ const onTokenAdd = function (event) {
       }
     }
       else {
+        currentPlayerToken = 'x'
         return
     // specifically tell it to stop if the game IS over, don't presume the game will stop automatically. Even though it should, we want to make sure it does.
       }
