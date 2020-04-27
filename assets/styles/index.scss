@@ -19,6 +19,10 @@ body {
   flex-grow: 1;
 }
 
+.board {
+  margin: auto;
+}
+
 .input-field {
   border: 2px solid black;
 }
@@ -29,11 +33,21 @@ body {
 }
 
 .success {
-  color: green;
+  display: inline-flex;
+  color: white;
+  border: 1px solid black;
+  background-color: green;
+  font-weight: bold;
+  padding: 5px;
 }
 
 .failure {
-  color: red;
+  display: inline-flex;
+  color: white;
+  border: 1px solid black;
+  background-color: red;
+  font-weight: bold;
+  padding: 5px;
 }
 
 #authenticated {
@@ -43,10 +57,22 @@ body {
 .box {
   align-items: center;
   background-color: lightgray;
-  border: 5px solid black;
+  // border: 5px solid black;
+  border-bottom: 5px solid black;
+  border-right: 5px solid black;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+  user-select: none;
+  font-size: 12vh;
   display: flex;
   height: 100px;
   justify-content: center;
+  align-items: center;
+  &:nth-child(3n) {
+    border-right: 0;
+  }
+  &:nth-last-child(-1n + 3) {
+    border-bottom: 0;
+  }
 }
 
 .box:hover {

@@ -76,17 +76,13 @@ const newGameSuccess = function (data) {
   // console.log(`newGameSuccess ran. Data is:`, data)
 
   const newBoard = (`
-  <div class="row game-board-top">
+  <div class="row board">
     <div id="0" class="col-4 box"></div>
     <div id="1" class="col-4 box"></div>
     <div id="2" class="col-4 box"></div>
-  </div>
-  <div class="row game-board-middle">
     <div id="3" class="col-4 box"></div>
     <div id="4" class="col-4 box"></div>
     <div id="5" class="col-4 box"></div>
-  </div>
-  <div class="row game-board-bottom">
     <div id="6" class="col-4 box"></div>
     <div id="7" class="col-4 box"></div>
     <div id="8" class="col-4 box"></div>
