@@ -13,44 +13,44 @@
     </head>
     <body>
       <h1>Tic Tac Toe</h1>
-      <p>Messages should appear below this.</p>
+      <!-- <p>Messages should appear below this.</p> -->
       <div id="message"></div>
-      <p>Messages should appear above this.</p>
+      <!-- <p>Messages should appear above this.</p> -->
 
       <div id="unauthenticated">
         <form id="sign-up">
-          <input required type="text" placeholder="Enter Email" name="credentials[email]">
-          <input required type="password" placeholder="Enter Password" name="credentials[password]">
-          <input required type="password" placeholder="Confirm Password" name="credentials[password_confirmation]">
-          <button type="submit" class="btn btn-outline-primary">Sign Up!</button>
+          <input class="input-field" required type="text" placeholder="Enter Email" name="credentials[email]">
+          <input class="input-field" required type="password" placeholder="Enter Password" name="credentials[password]">
+          <input class="input-field" required type="password" placeholder="Confirm Password" name="credentials[password_confirmation]">
+          <button type="submit" class="btn btn-primary">Sign Up!</button>
         </form>
 
         <form id="sign-in">
-          <input required type="text" placeholder="Enter Email" name="credentials[email]">
-          <input required type="password" placeholder="Enter Password" name="credentials[password]">
-          <button type="submit" class="btn btn-outline-primary">Sign In!</button>
+          <input class="input-field" required type="text" placeholder="Enter Email" name="credentials[email]">
+          <input class="input-field" required type="password" placeholder="Enter Password" name="credentials[password]">
+          <button type="submit" class="btn btn-primary">Sign In!</button>
         </form>
     </div>
 
 
     <div id="authenticated">
       <form id="change-password">
-        <input required type="password" name="passwords[old]" placeholder="Old Password">
-        <input required type="password" name="passwords[new]" placeholder="New Password">
-        <button type="submit" class="btn btn-outline-primary">Change Password!</button>
+        <input class="input-field" required type="password" name="passwords[old]" placeholder="Old Password">
+        <input class="input-field" required type="password" name="passwords[new]" placeholder="New Password">
+        <button type="submit" class="btn btn-primary">Change Password!</button>
       </form>
 
       <form id="sign-out">
-        <button type="submit" class="btn btn-outline-primary">Sign Out</button>
+        <button type="submit" class="btn btn-primary">Sign Out</button>
       </form>
 
       <form id="game-index">
-        <button type="submit" class="btn btn-outline-primary">Number of Completed Games</button>
+        <button type="submit" class="btn btn-primary">Number of Completed Games</button>
       </form>
       <div id="game-display"></div>
 
       <form id="game-new">
-        <button type="submit" class="btn btn-outline-primary">New Game</button>
+        <button type="submit" class="btn btn-primary">New Game</button>
       </form>
 
       <div class="container">

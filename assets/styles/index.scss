@@ -1,5 +1,18 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  background: url(public/geometric-blue-seamless-pattern-background-simple-vector-22649200.jpg);
+}
+
+.input-field {
+  border: 2px solid black;
+}
+
+.btn-primary {
+  background-color: green;
+  border: 2px solid black;
+}
+
 .success {
   color: green;
 }
