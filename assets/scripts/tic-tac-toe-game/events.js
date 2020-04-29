@@ -48,7 +48,8 @@ const onTokenAdd = function (event) {
         gameToken: currentPlayerToken,
         over: gameOver
         // add notes here later
-      }).then((apiresponse) => console.log('Update was', apiresponse))
+      })
+      // .then((apiresponse) => console.log('Update was', apiresponse))
       if (tieGame === true) {
         // ui.winnerNotice('Tie Game')
         ui.gameTie()
