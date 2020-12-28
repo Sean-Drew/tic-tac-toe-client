@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Lockwood Games</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+
+      <div id="name-header">
+        <img src="public/Tic Tac Toe - Transparent Background.png">
+        <h1>Tic Tac Toe</h1>
+        <img src="public/Tic Tac Toe - Transparent Background.png">
+      </div>
+
+      <!-- <p>Messages should appear below this.</p> -->
+      <div id="message"></div>
+      <!-- <p>Messages should appear above this.</p> -->
+
+      <div id="unauthenticated">
+        <form id="sign-up">
+          <input class="input-field" required type="text" placeholder="Enter Email" name="credentials[email]">
+          <input class="input-field" required type="password" placeholder="Enter Password" name="credentials[password]">
+          <input class="input-field" required type="password" placeholder="Confirm Password" name="credentials[password_confirmation]">
+          <button type="submit" class="btn btn-primary">Sign Up!</button>
+        </form>
+
+        <form id="sign-in">
+          <input class="input-field" required type="text" placeholder="Enter Email" name="credentials[email]">
+          <input class="input-field" required type="password" placeholder="Enter Password" name="credentials[password]">
+          <button type="submit" class="btn btn-primary">Sign In!</button>
+        </form>
+    </div>
+
+
+    <div id="authenticated">
+      <form id="change-password">
+        <input class="input-field" required type="password" name="passwords[old]" placeholder="Old Password">
+        <input class="input-field" required type="password" name="passwords[new]" placeholder="New Password">
+        <button type="submit" class="btn btn-primary">Change Password!</button>
+      </form>
+
+      <form id="sign-out">
+        <button type="submit" class="btn btn-primary">Sign Out</button>
+      </form>
+
+      <form id="game-index">
+        <button type="submit" class="btn btn-primary">Number of Completed Games</button>
+      </form>
+      <div id="game-display" class="game-display-content"></div>
+
+      <form id="game-new">
+        <button type="submit" class="btn btn-primary">New Game</button>
+      </form>
+
+      <div class="container">
+        <div id="game-board" class="board">
+          <!-- <div class="row game-board-top">
+            <div id="0" class="col-4 box">Top Left</div>
+            <div id="1" class="col-4 box">Top Center</div>
+            <div id="2" class="col-4 box">Top Right</div>
+          </div>
+          <div class="row game-board-middle">
+            <div id="3" class="col-4 box">Middle Left</div>
+            <div id="4" class="col-4 box">Middle Center</div>
+            <div id="5" class="col-4 box">Middle Right</div>
+          </div>
+          <div class="row game-board-bottom">
+            <div id="6" class="col-4 box">Bottom Left</div>
+            <div id="7" class="col-4 box">Bottom Middle</div>
+            <div id="8" class="col-4 box">Bottom Right</div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    </body>
+</html>
